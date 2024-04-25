@@ -22,12 +22,12 @@ public class NameChecker {
             if (!Character.isLetter(c) && c != '-' && c != '\'') {
                 return false;
             }
+             // Hyphen or single quote cannot be the first or last character
             if ((c == '-' || c == '\'') && (i == 0 || i == input.length() - 1)) {
-                // Hyphen or single quote cannot be the first or last character
                 return false;
             }
+            // Hyphens cannot be consecutive
             if (c == '-' && input.charAt(i - 1) == '-') {
-                // Hyphens cannot be consecutive
                 return false;
             }
         }
